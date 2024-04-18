@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/png" href="/static/img/btlogo.png">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans:100,300,400,500,700,900,100i,300i,400i,500i,700i,900i.css">
+
+   <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">-->
+    <title>Doodle</title>
+
+
+    <style>
+        
+        .search_categories{
+  font-size: 15px;
+  padding: 10px 8px 10px 14px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.search_categories .select{
+  width: 80%;
+  background-position:100% center;
+}
+
+.search_categories .select select{
+  background: transparent;
+  line-height: 1;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  width: 120%;
+  position: relative;
+  z-index: 10;
+  font-size: 1em;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <div class="mode-tog"></div>
+    <div class="container">
+        <div class="dark-mode"></div>
+    </div>
+    
+    <h1 id="demo" style="font-family: 'Times New Roman', Times, serif; font-style: italic; max-width: 200px;">BooksTreasury</h1><h1><IMG style="height: 75px; width:225px; margin-left: -70px; margin-top: -20px;" src="https://uploads-ssl.webflow.com/60b3bc49fb2fc94bb43bdef5/60b41792ffeeb78a327a25fd_invoicel.png"></h1>
+    <p id="demo" style="font-family: 'Times New Roman', Times, serif; font-style: italic; top:50%; left:49%; text-align: center;"><i>By<br><br>{{username}}</i></p>
+       <h2> <div class="card" style="width: 200px; height: 120px; margin-top: 25px; margin-left: 20px;">
+        <div class="field" style="margin-top: 6%;">
+            
+
+            <div class="search_categories" style="margin-top: 1%;">
+                <div class="select">
+                    <select name="sorting" onchange="myFunction(this);">
+                        <option default>Font</option>
+                        <option>Cursive</option>
+                        <option>Fantasy</option>
+                        <option>Sans-serif</option>
+                        <option>Monospace</option>
+                        <option>Courier New</option>
+                        <option>Candara</option>
+                        <option>Trebuchet MS</option>
+                        <option>Comic Sans MS</option>
+                    </select>
+                </div>
+            </div>
+        </div></div></h2>
+
+        <p style="justify-content: center; font-family: 'Google Sans';"><small>&copy; 2021 BooksTreasury</small></p>
+
+
+    <script>
+        let modeToggle = document.querySelector('.mode-tog');
+        let darkMode = document.querySelector('.dark-mode');
+
+        modeToggle.addEventListener('click', () =>{
+            darkMode.classList.toggle('active');
+            modeToggle.classList.toggle('active');
+        })
+
+        function myFunction(selectTag) {
+            var listValue = selectTag.options[selectTag.selectedIndex].text;
+            document.getElementById("demo").style.fontFamily = listValue;
+        }
+    </script>
+
+</body>
+</html>
