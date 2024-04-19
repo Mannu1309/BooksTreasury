@@ -1,0 +1,319 @@
+{% extends 'base.html' %}
+
+{% block title %}About{% endblock title %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+{% block body %}
+
+
+<div class="container my-3 ">
+
+<style>
+.image-thumbnail-1{
+  height: 200px;
+   object-fit: cover;
+}
+.image-img-fluid{
+  object-fit: cover
+}
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+#team {
+    background: white !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: black;
+    border-color: black;
+    box-shadow: none;
+    outline: none;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+}
+
+section {
+    padding: 60px 0;
+}
+
+section .section-title {
+    text-align: center;
+    color: black;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+#team .card {
+    border: none;
+    background: #ffffff;
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    border-radius: .25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.mainflip {
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.frontside {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 30px;
+}
+
+.backside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-box-shadow: 5px 7px 9px -4px rgb(255, 255, 255);
+    -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+}
+
+.frontside,
+.backside {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 1s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.frontside .card,
+.backside .card {
+    min-height: 312px;
+}
+
+.backside .card a {
+    font-size: 18px;
+    color: black !important;
+}
+
+.frontside .card .card-title,
+.backside .card .card-title {
+    color: black !important;
+}
+
+.frontside .card .card-body img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+</style>
+
+<div class="card text-white">
+  <img class="card-img" id="front" src="/static/img/johannesburg1.jpg" alt="Card image">
+  <div class="card-img-overlay">
+    <h3 class="card-title" style="font-style: italic;"><strong>Books</strong> Treasury</h3>
+    <p class="card-text">It is an Ecommerce Website that deals with selling and buying of books.<br>The primary goal of our e-commerce site Books Treasury is to buy, sell & read books online.<br><strong>Books Treasury</strong> is a form of electronic shopping store where the buyer is directly online to the seller’s computer usually via the internet. 
+      Usually, the customer if they want Book item they should visit the site, and they wish to purchase the items they do the payment and get the Book to the home. Same for book Sellers, they can easily select the category of book they want to sell and sell it on our portal. The main advantage of e-commerce website over traditional commerce is that user can browse online shops, compare prices and order books sitting at home on their PC.</p>
+    <p class="card-text" style="font-style: italic;">Last updated 3 mins ago</p>
+  </div>
+</div>
+
+<section id="team" class="pb-5">
+  <div class="container">
+      <h5 class="section-title h1">Our Team</h5>
+      <div class="row">
+          <!-- Tegveer -->
+          <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="image-flip" >
+                  <div class="mainflip flip-0">
+                      <div class="frontside">
+                          <div class="card">
+                              <div class="card-body text-center">
+                                  <p><img class=" img-fluid" src="/static/img/teg2.jpg" alt="card image"></p>
+                                  <h4 class="card-title">Tegveer Singh</h4>
+                                  <p class="card-text">Developer</p>
+                                  <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="backside">
+                          <div class="card">
+                              <div class="card-body text-center mt-4">
+                                  <h4 class="card-title">Tegveer Singh</h4>
+                                  <p class="card-text"><h6>Punjabi University, Patiala</h6><br>Technologies : C, C++, Java, Python , Machine Learning, Deep Learning, HTML, Javascript, CSS, Bootstrap, Django.</p>
+                                  <ul class="list-inline">
+                                      <li class="list-inline-item">
+                                          <a class="social-icon text-xs-center" target="_blank" href="mailto:manntegveer1512@gmail.com">
+                                              <i class="fa fa-google"></i>
+                                          </a>
+                                      </li>
+                                      <li class="list-inline-item">
+                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.instagram.com/gsm2k18">
+                                              <i class="fa fa-instagram"></i>
+                                          </a>
+                                      </li>
+                                      <li class="list-inline-item">
+                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.snapchat.com/add/gsmann15">
+                                              <i class="fa fa-snapchat"></i>
+                                          </a>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- ./Tegveer -->
+          <!-- Navpreet -->
+          <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                  <div class="mainflip">
+                      <div class="frontside">
+                          <div class="card">
+                              <div class="card-body text-center">
+                                  <p><img class=" img-fluid" src="/static/img/nav2.jpg" alt="100x100"></p>
+                                  <h4 class="card-title">Navpreet Singh</h4>
+                                  <p class="card-text">Developer</p>
+                                  <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="backside">
+                          <div class="card">
+                              <div class="card-body text-center mt-4">
+                                  <h4 class="card-title">Navpreet Singh</h4>
+                                  <p class="card-text"><h6>Punjabi University, Patiala</h6><br>Technologies : C, C++, Java, Python , Machine Learning, Deep Learning, HTML, Javascript, CSS, Bootstrap, Django.</p>
+                                  <ul class="list-inline">
+                                      <li class="list-inline-item">
+                                          <a class="social-icon text-xs-center" target="_blank" href="mailto:singhnavpreet392@gmail.com">
+                                              <i class="fa fa-google"></i>
+                                          </a>
+                                      </li>
+                                      <li class="list-inline-item">
+                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.twitter.com/Navpree76666711/">
+                                              <i class="fa fa-twitter"></i>
+                                          </a>
+                                      </li>
+                                      <li class="list-inline-item">
+                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/navpreet-singh-342566192/">
+                                              <i class="fa fa-linkedin"></i>
+                                          </a>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- ./Navpreet -->
+          <!-- Manish -->
+          <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                  <div class="mainflip">
+                      <div class="frontside">
+                          <div class="card">
+                              <div class="card-body text-center">
+                                  <p><img class=" img-fluid" src="/static/img/mk4.jpg" alt="card image"></p>
+                                  <h4 class="card-title">Manish Kumar</h4>
+                                  <p class="card-text">Developer</p>
+                                  <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="backside">
+                          <div class="card">
+                              <div class="card-body text-center mt-4">
+                                  <h4 class="card-title">Manish Kumar</h4>
+                                  <p class="card-text"><h6>Punjabi University, Patiala</h6><br>Technologies : C, C++, Java, Python , Machine Learning, Deep Learning, HTML, Javascript, CSS, Bootstrap, Django.</p>
+                                  <ul class="list-inline">
+                                      <li class="list-inline-item">
+                                          <a class="social-icon text-xs-center" target="_blank" href="mailto:manish.prj710@gmail.com">
+                                              <i class="fa fa-google"></i>
+                                          </a>
+                                      </li>
+                                      <li class="list-inline-item">
+                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.twitter.com/manish71099">
+                                              <i class="fa fa-twitter"></i>
+                                          </a>
+                                      </li>
+                                      <li class="list-inline-item">
+                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/manish-kumar-a44398191/">
+                                              <i class="fa fa-linkedin"></i>
+                                          </a>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- ./Manish -->
+          
+      </div>
+  </div>
+</section> 
+<div class="row" style="justify-content: center; margin-bottom: 5%; margin-right: 20%">
+    <div class="col-md-4" style="margin-top: 8%;">
+        <h2 style="color: black;"><img src="/static/img/btlogo.png" class="logo" width="33" height="33" style="margin-right: 4px;">BooksTreasury<br><h3>61, New Lal Bagh<br>Patiala, Punjab<br>India - 147001</h3></h2>
+    </div>
+    <div class="col-md-3">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3443.915606136328!2d76.38482875911826!3d30.32491825973603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDE5JzI5LjciTiA3NsKwMjMnMTEuMyJF!5e0!3m2!1sen!2sin!4v1622221832627!5m2!1sen!2sin" width="600" height="450" style="margin-bottom: 4%; border-radius: 100%; width: 350px; height: 350px; overflow: hidden; margin-left: 65%;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</div> 
+
+</div>
+
+
+<footer class="text-muted py-5" id="footer" style="background: black; color: grey;">
+    <div class="container">
+      <p class="float-end mb-1">
+        <a class="text-decoration-none" href="#" style="color: white;">Back to top</a>
+      </p>
+      <p class="mb-1">&copy; 2021 Books Treasury all rights reserved</p>
+      <p class="mb-0">New to Books Treasury? <a class="text-decoration-none" href="/" style="color: white;">Visit our homepage</a></p>
+      <p style=" margin-top: 0.5%;"><a class="text-decoration-none" href="{% url 'misc' %}" target="_blank" style="color: white;">&#x2022; Privacy Policy</a><a class="text-decoration-none" href="{% url 'misc' %}" target="_blank" style="color: white; margin-left: 2%;">&#x2022; Terms & Conditions</a></p>
+    </div>
+  </footer>
+     
+
+{% endblock body %}

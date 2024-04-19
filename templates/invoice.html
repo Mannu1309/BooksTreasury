@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans:100,300,400,500,700,900,100i,300i,400i,500i,700i,900i.css">
+<TITLE>Invoice Details</TITLE>
+
+<style>
+
+#page_1 {position:relative; overflow: hidden;margin: 58px 0px 25px 0px;padding: 0px;border: none;width: 794px;}
+
+#page_1 #p1dimg1 {position:absolute;top:-13px;left:65px;z-index:-1; object-fit:scale-down;}
+.p1{text-align: right;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.ft8{font: 18px 'Arial';line-height: 21px;}
+
+.t0{margin-left: 66px;font: 11px 'Arial';}
+
+.td0{padding: 0px;margin: 0px;width: 416px;vertical-align: bottom;}
+.tr0{height: 19px;}
+.t1{width: 666px;margin-left: 18px;margin-top: 25px;font: 11px 'Arial';}
+.ft2{font: 34px 'Arial';line-height: 39px;}
+
+
+
+
+.heading td {
+	background: #eee;
+	border-bottom: 1px solid #ddd;
+	font-weight: bold;
+	height: 30px;
+	margin-top: 2%;
+}
+
+.details td {
+	padding-bottom: 20px;
+	height: 30px;
+	width:100px	;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.item td {
+	border-top: 1px solid #eee;
+	height: 30px;
+}
+
+.item.last td {
+	border-bottom: none;
+	height: 30px;
+}
+
+
+
+</STYLE>
+
+</HEAD>
+
+<BODY>
+	<IMG style="height: 80px; width:240px;" src="https://uploads-ssl.webflow.com/60b3bc49fb2fc94bb43bdef5/60b41792ffeeb78a327a25fd_invoicel.png"></DIV>
+
+<DIV id="page_1" >
+<DIV id="p1dimg1">
+<TABLE cellpadding=0 cellspacing=0 class="t0" style="margin-top: -40px;">
+<TR class="item0">
+	<TD class="tr0 td0"><P class="p0 ft0">&nbsp;</P></TD>
+	<TD class="tr0 td1"><P class="p1 ft1">Books Treasury Inc.</P></TD>
+</TR>
+<TR class="item0">
+	<TD rowspan=3 class="tr1 td0"><P class="p0 ft2" style="font: 34px; text-align: left; margin-left: -50px;">Invoice</P></TD>
+	<TD class="tr2 td1"><P class="p1 ft1">House No. 61</P></TD>
+</TR>
+<TR class="item0">
+	<TD class="tr2 td1"><P class="p1 ft1">New Lal Bagh</P></TD>
+</TR>
+<TR class="item0">
+	<TD class="tr3 td1"><P class="p1 ft1">Patiala, Punjab 147001</P></TD>
+</TR>
+<TR class="item0">
+	<TD class="tr0 td0"><P class="p0 ft1" style="font-family: Google Sans; margin-left: -48px;">Invoice number: {{invoiceno}}</P></TD>
+	<TD class="tr0 td1"><P class="p1 ft1">India</P></TD>
+</TR>
+<TR class="item0">
+	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
+	<TD class="tr2 td1"><P class="p1 ft1" style="font-family: Google Sans;">GSTIN: 27AAGXXXXXXXXXX</P></TD>
+</TR>
+<TR class="item0">
+	<TD class="tr2 td0"><P class="p0 ft0">&nbsp;</P></TD>
+	<TD class="tr2 td1"><P class="p1 ft1" style="font-family: Google Sans;">PAN: AAGXXXXXXX</P></TD>
+</TR>
+</TABLE cellpadding=0 cellspacing=0 class="t1">
+
+<table cellpadding=0 cellspacing=0 class="t1" >
+
+	<tr class="heading0" style="font-family: Google Sans;">
+		<td><strong>Bill to</strong></td>
+	
+		<td><strong>Details</strong></td>
+	</tr>
+	
+	
+	<tr class="item0"  style="font-family: Google Sans;">
+		<td>{{customer}}</td>
+	
+		<td><span style="color: gray;">Order ID................................... </span>{{order.id}}</td>
+
+	</tr>
+	
+	
+	<tr class="item0" style="font-family: Google Sans;">
+		<td>{{address}}</td>
+	
+		<td><span style="color: gray;">Invoice number........................ </span>{{invoiceno}}</td>
+
+	</tr>
+
+	<tr class="item0"  style="font-family: Google Sans;">
+		<td>{{city}}, {{state}} {{zipcode}}</td>
+	
+		<td><span style="color: gray;">Invoice date............................. </span>{{datetoday}}</td>
+
+	</tr>
+
+	<tr class="item0"  style="font-family: Google Sans;">
+		<td>{{country}}</td>
+	
+		<td><span style="color: gray;">Billing ID.................................. </span>{{billingid}}</td>
+
+	</tr>
+
+	<tr class="item0"  style="font-family: Google Sans;">
+		<td>Place of Supply/State Code: {{statecode}}</td>
+	
+		<td><span style="color: gray;">Transaction ID......................... </span>{{transaction_id}}</td>
+
+	</tr>
+	
+	</table>
+
+
+
+<table cellpadding=0 cellspacing=0 class="t1" style="margin-top: 5.5%;">
+
+<tr class="heading" style="font-family: Google Sans;">
+	<td>Item</td>
+
+	<td>Price</td>
+	<td>Quantity</td>
+</tr>
+
+{% for items in orderItem.all %}
+<tr class="item" style="font-family: Google Sans;">
+	<td>{{items.product}}</td>
+
+	<td>Rs.{{items.product.price}}</td>
+	<td>x {{items.quantity}}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+
+<TABLE cellpadding=0 cellspacing=0 class="t1">
+<TR class="item0">
+	<TD class="tr0 td2"></TD>
+	<TD class="tr0 td3"><P class="p0 ft1"></P></TD>
+	<TD class="tr0 td4"><P class="p0 ft0">&nbsp;</P></TD>
+	<TD class="tr0 td5"><P class="p0 ft1" style="font-family: Google Sans;">HSN: XXXXXX</P></TD>
+	<TD class="tr0 td6"><P class="p0 ft0">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr4 td2"></TD>
+	<TD class="tr4 td3"><P class="p0 ft4"><SPAN class="ft3"></SPAN><SPAN class="ft3"></SPAN></P></TD>
+	<TD class="tr4 td4"><P class="p0 ft1"></P></TD>
+	<TD class="tr4 td5"><P class="p0 ft1" style="font-family: Google Sans;">Books Treasury</P></TD>
+	<TD class="tr4 td6"><P class="p0 ft0">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td2"></TD>
+	<TD rowspan=2 class="tr4 td3"><P class="p0 ft6"><SPAN class="ft5"></SPAN><SPAN class="ft5"></SPAN></P></TD>
+	<TD rowspan=2 class="tr4 td4"><P class="p0 ft1"></P></TD>
+	<TD class="tr5 td7"><P class="p0 ft7">&nbsp;</P></TD>
+	<TD class="tr5 td8"><P class="p0 ft7">&nbsp;</P></TD>
+</TR>
+<TR class="item0">
+	<TD class="tr6 td2"></TD>
+	<TD rowspan=2 class="tr7 td5"><P class="p0 ft1">Total in INR</P></TD>
+	<TD rowspan=2 class="tr7 td6"><P class="p1 ft8">Rs.{{total}}</P></TD>
+</TR>
+<TR>
+	<TD class="tr8 td2"></TD>
+	<TD rowspan=2 class="tr4 td3"><P class="p0 ft6"><SPAN class="ft5"></SPAN><SPAN class="ft5"></SPAN></P></TD>
+	<TD rowspan=2 class="tr4 td4"><P class="p0 ft1"><NOBR></NOBR></P></TD>
+</TR>
+<TR>
+	<TD class="tr9 td2"></TD>
+	<TD class="tr9 td5"><P class="p0 ft9">&nbsp;</P></TD>
+	<TD class="tr9 td6"><P class="p0 ft9">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr4 td2"></TD>
+	<TD class="tr4 td3"><P class="p0 ft6"><SPAN class="ft5"></SPAN><SPAN class="ft5"></SPAN></P></TD>
+	<TD class="tr4 td4"><P class="p0 ft1"><NOBR></NOBR></P></TD>
+	<TD class="tr4 td5"><P class="p0 ft0">&nbsp;</P></TD>
+	<TD class="tr4 td6"><P class="p0 ft0">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr7 td2"></TD>
+	<TD class="tr7 td3"><P class="p0 ft0">&nbsp;</P></TD>
+	<TD class="tr7 td4"><P class="p0 ft0">&nbsp;</P></TD>
+	<TD class="tr7 td5"><P class="p0 ft1">Summary for {{datetoday}}</P></TD>
+	<TD class="tr7 td6"><P class="p0 ft0">&nbsp;</P></TD>
+</TR>
+<TR>
+	<TD class="tr5 td2"></TD>
+	<TD class="tr6 td3"><P class="p0 ft10">&nbsp;</P></TD>
+	<TD class="tr6 td4"><P class="p0 ft10">&nbsp;</P></TD>
+	<TD class="tr5 td7"><P class="p0 ft7">&nbsp;</P></TD>
+	<TD class="tr5 td8"><P class="p0 ft7">&nbsp;</P></TD>
+</TR>
+<TR class="item0">
+	<TD class="tr10 td2"></TD>
+	<TD class="tr10 td3"><P class="p0 ft0">&nbsp;</P></TD>
+	<TD class="tr10 td4"><P class="p0 ft0">&nbsp;</P></TD>
+	<TD class="tr10 td5"><P class="p0 ft1">Subtotal in INR</P></TD>
+	<TD class="tr10 td6"><P class="p1 ft1">Rs.{{total}}</P></TD>
+</TR>
+<TR>
+	<TD class="tr4 td2"></TD>
+	<TD class="tr4 td3"><P class="p0 ft0">&nbsp;</P></TD>
+	<TD class="tr4 td4"><P class="p0 ft0">&nbsp;</P></TD>
+	<TD class="tr4 td5"><P class="p0 ft1">Shipping in INR</P></TD>
+	<TD class="tr4 td6"><P class="p1 ft1">Rs.0.00</P></TD>
+</TR>
+<TR>
+	<TD class="tr4 td2"></TD>
+	<TD class="tr4 td3"><P class="p0 ft0">&nbsp;</P></TD>
+	<TD class="tr4 td4"><P class="p0 ft0">&nbsp;</P></TD>
+	<TD class="tr4 td5"><P class="p0 ft1">Total in INR</P></TD>
+	<TD class="tr4 td6"><P class="p1 ft1">Rs.{{total}}</P></TD>
+</TR>
+</TABLE>
+<P class="p5 ft12" style="text-align: center;">Note: Unless otherwise stated, tax on this invoice is not payable under reverse charge. Supplies under reverse charge are to be mentioned separately.</P>
+
+<P class="p7 ft13" style="text-align: center;font-family: Google Sans; bottom: 0;margin-left: 43%;color: gray; ">&copy; 2021 BooksTreasury</P>
+</DIV>
+
+</BODY>
+</HTML>

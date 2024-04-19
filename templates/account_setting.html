@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Your Profile{% endblock title %}
+
+{% block body %}
+<style>
+    .profile-pic{
+        max-width: 200px;
+        max-height: 200px;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+</style>
+<br>
+
+<h2 style="text-align: center; text-transform: capitalize;">{{request.user}}'s Profile</h2>
+
+<br>
+<div class="row" style="max-width: 1490px; margin-left: 1%;">
+    <div class="col-md-3">
+        <div class="card card-body">
+            <a class="btn btn-warning" href="/">&#8592; Back to Home</a>
+            <hr>
+            <h3 style="text-align: center;">Account Settings</h3>
+            <hr>
+            <img class="profile-pic" src="{{request.user.customer.profile_pic.url}}" >
+            
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="card card-body">
+
+            <form method="POST" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group m-3">{{form.as_p}}</div>
+            <input class="btn btn-success form-label" type="submit" name="Update Information" style="margin-left: 1.5% ;">
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+
+<footer class="text-muted py-5" id="footer" style="background: black; color: grey;">
+    <div class="container">
+      <p class="float-end mb-1">
+        <a class="text-decoration-none" href="#" style="color: white;">Back to top</a>
+      </p>
+      <p class="mb-1">&copy; 2021 Books Treasury all rights reserved</p>
+      <p class="mb-0">New to Books Treasury? <a class="text-decoration-none" href="/" style="color: white;">Visit our homepage</a></p>
+      <p style=" margin-top: 0.5%;"><a class="text-decoration-none" href="{% url 'misc' %}" target="_blank" style="color: white;">&#x2022; Privacy Policy</a><a class="text-decoration-none" href="{% url 'misc' %}" target="_blank" style="color: white; margin-left: 2%;">&#x2022; Terms & Conditions</a></p>
+    </div>
+  </footer>
+     
+
+{% endblock body %}
